@@ -34,7 +34,7 @@ $(function() {
       function urlLoop(index) {
         it('URL defined and not empty', function() {
           expect(allFeeds[index].url).toBeDefined();
-          expect(allFeeds[index].url).not.toBe(0);
+          expect(allFeeds[index].url).not.toBe('');
         });
       }
 
@@ -42,8 +42,15 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+      function nameLoop(index) {
+        it('Name defined and not empty', function() {
+          expect(allFeeds[index].name).toBeDefined();
+          expect(allFeeds[index].name).not.toBe('');
+        })
+      }
       for (var i = 0; i < allFeeds.length; i++){
         urlLoop(i);
+        nameLoop(i);
       }
     });
 
