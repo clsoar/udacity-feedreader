@@ -81,13 +81,12 @@ $(function() {
             expect(el).not.toHaveClass('menu-item');
           });
     });
-    /* TODO: Write a new test suite named "Initial Entries" */
+    // Test suite for checking entries in feed after feed loads
     describe('Initial Entries', function() {
-        var entry,
-            feed;
+        var entry;
+        //loads feed
         beforeEach(function(done) {
           loadFeed(0, function() {
-            feed = document.querySelector('.feed');
             done();
           });
         });
@@ -101,10 +100,28 @@ $(function() {
            done();
          });
     });
-    /* TODO: Write a new test suite named "New Feed Selection" */
+    // Test suite that checks that the feed changes
+    describe('New Feed Selection', function() {
+      var entry1,
+          entry2;
+      //Loads two different feeds
+      beforeEach(function(done) {
+        loadFeed(0, function() {
+          entry1 = document.getElementsByClassName('entry');
+          done();
+        });
+        loadFeed(1, function() {
+          entry2 = document.getElementsByClassName('entry');
+          done();
+        });
+      });
 
-        /* TODO: Write a test that ensures when a new feed is loaded
+        /* Test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
          */
+         it('Content in feed changes after it loads a new selection', function(done) {
+           expect(entry1).not.toBe(entry2);
+           done();
+         });
+      });
 }());
