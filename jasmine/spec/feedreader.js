@@ -92,24 +92,26 @@ $(function() {
          * a single .entry element within the .feed container.
          */
          it('There is an entry in the feed after it loads', function(done) {
-           entry = document.getElementsByClassName('entry');
+           entry = document.querySelectorAll('.feed .entry');
            expect(entry.length).toBeGreaterThan(0);
            done();
          });
     });
     // Test suite that checks that the feed changes
     describe('New Feed Selection', function() {
-      var entry1,
-          entry2;
+      var feed1,
+          feed2;
       //Loads two different feeds
       beforeEach(function(done) {
         loadFeed(0, function() {
-          entry1 = document.getElementsByClassName('entry');
+          feed1 = document.getElementsByClassName('feed');
+          console.log(feed1);
           loadFeed(1, function() {
-            entry2 = document.getElementsByClassName('entry');
+            feed2 = document.getElementsByClassName('feed');
+            //console.log(feed2);
             done();
           });
-          done();          
+          done();
         });
       });
 
@@ -117,7 +119,7 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          */
          it('Content in feed changes after it loads a new selection', function(done) {
-           expect(entry1).not.toBe(entry2);
+           expect(feed1).not.toBe(feed2);
            done();
          });
       });
