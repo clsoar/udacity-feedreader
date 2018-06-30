@@ -6,7 +6,7 @@ This project includes a series of Jasmine test suites that test a web-based appl
 
 Download the files and folders contained in this GitHub Repo and run locally from your computer.
 
-To run locally from your computer, open the index.html file in your browser. Additionally, there is a Jasmine folder within the documents. Within that folder is a "spec" folder which holds the feedreader.js file, which contains all of the testing suites.
+To run locally from your computer, open the index.html file in your browser. The tests will be at the bottom of the page. Additionally, there is a Jasmine folder within the documents. Within that folder is a "spec" folder which holds the feedreader.js file, which contains all of the testing suites.
 
 
 ## What do the tests do?
