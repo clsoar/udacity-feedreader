@@ -105,11 +105,11 @@ $(function() {
       beforeEach(function(done) {
         loadFeed(0, function() {
           entry1 = document.getElementsByClassName('entry');
-          done();
-        });
-        loadFeed(1, function() {
-          entry2 = document.getElementsByClassName('entry');
-          done();
+          loadFeed(1, function() {
+            entry2 = document.getElementsByClassName('entry');
+            done();
+          });
+          done();          
         });
       });
 
